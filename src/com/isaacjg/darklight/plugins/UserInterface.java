@@ -1,4 +1,4 @@
-package com.isaacjg.darklight.plugins.GUI;
+package com.isaacjg.darklight.plugins;
 
 import java.awt.Color;
 import java.awt.Dimension;
