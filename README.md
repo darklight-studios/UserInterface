@@ -1,7 +1,7 @@
 Darklight Nova Core Plugin: UserInterface
 =========================================
 
-Plugin for [Darklight Nova Core](https://github.com/IsaacJG/darklight-nova-core)
+Plugin for [Darklight Nova Core](https://github.com/darklight-studios/darklight-nova-core)
 
 ### Function
 The UserInterface plugin creates a graphical user interface for DNC, allowing the user to refresh the engine, and exit on command.
