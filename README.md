@@ -13,3 +13,9 @@ The UserInterface plugin creates a graphical user interface for DNC, allowing th
 
 ### Screenshot
 ![Screenshot 1](http://puu.sh/3IgPm.png)
+
+### License
+[GPLv3](/LICENSE)
+
+### Contributors
+[@IsaacJG](https://github.com/IsaacJG)
