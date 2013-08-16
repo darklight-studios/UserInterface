@@ -13,8 +13,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
+import com.ijg.darklight.sdk.core.AccessHandler;
 import com.ijg.darklight.sdk.core.Plugin;
-import com.ijg.darklight.sdk.core.PluginHandler;
 
 /*
  * UserInterface - A plugin for Darklight Nova Core
@@ -56,9 +56,9 @@ public class UserInterface extends Plugin {
 	private JLabel totalLabel, foundLabel, percentLabel;
 	private JLabel total, found, percent;
 	
-	public UserInterface(PluginHandler handler) {
-		super(handler);
-		handler.accessHandler.setAutoUpdate(false);
+	public UserInterface(AccessHandler accessHandler) {
+		super(accessHandler);
+		accessHandler.setAutoUpdate(false);
 	}
 	
 	@Override
@@ -72,7 +72,7 @@ public class UserInterface extends Plugin {
 	}
 	
 	private void update() {
-		if (pluginHandler.accessHandler.isFinished()) {
+		if (accessHandler.isFinished()) {
 			found.setForeground(Color.green);
 			percent.setForeground(Color.green);
 		} else {
@@ -80,8 +80,8 @@ public class UserInterface extends Plugin {
 			percent.setForeground(Color.black);
 		}
 		
-		found.setText("" + pluginHandler.accessHandler.getFixedIssueCount());
-		percent.setText(pluginHandler.accessHandler.getPercentComplete());
+		found.setText("" + accessHandler.getFixedIssueCount());
+		percent.setText(accessHandler.getPercentComplete());
 	}
 	
 	private void setupAndDisplayGUI() {
@@ -101,7 +101,7 @@ public class UserInterface extends Plugin {
 		foundLabel = new JLabel(FOUND_TEXT);
 		percentLabel = new JLabel(PERCENT_TEXT);
 		
-		total = new JLabel("" + pluginHandler.accessHandler.getTotalIssueCount());
+		total = new JLabel("" + accessHandler.getTotalIssueCount());
 		found = new JLabel("0");
 		percent = new JLabel("0%");
 		
@@ -167,11 +167,11 @@ public class UserInterface extends Plugin {
 			if (button.contains(e.getPoint())) {
 				switch (button.getActionCommand()) {
 				case "refresh":
-					ui.pluginHandler.accessHandler.checkIssues();
+					ui.accessHandler.checkIssues();
 					ui.update();
 					break;
 				case "finish":
-					ui.pluginHandler.accessHandler.finishSession();
+					ui.accessHandler.finishSession();
 				}
 			}
 		}
