@@ -9,7 +9,7 @@ The UserInterface plugin creates a graphical user interface for DNC, allowing th
 ### Use
 1. Download the latest version from the [releases](https://github.com/darklight-studios/UserInterface/releases) section
 2. Add DNCUserInterface.jar to your DNC build path
-3. Add `new UserInterface(pluginHandler)` to the initialized plugins array in CoreEngine
+3. Add `new UserInterface(accessHandler)` to the initialized plugins array in CoreEngine
 4. Start DNC!
 
 ### Screenshot
